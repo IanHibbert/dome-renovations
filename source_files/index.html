@@ -7,12 +7,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Dome Renovations</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-    <!--MY CSS -->
+
+	<!--MY CSS -->
     <link href="css/style.css" rel="stylesheet">
     
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+       
     <!--Lightbox-->
     <link href="css/lightbox.css" rel="stylesheet">
     
@@ -29,7 +30,7 @@
   
   <body>
    
-	<div class="container-fluid">
+	<div class="container contentContainer">
 		<!--Brand Name-->
 		<div id="brandName" class="center">
 			<h1>Dome Renovations</h1>
@@ -63,10 +64,9 @@
 		
 		<!--Info-->
 		<div id="info">				
-			<row>			
-				<div class="col-md-6 col-md-offset-3">
-					
-					<!--Services-->
+			<row>					
+				<!--Services-->
+				<div class="col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2 col-xs-7">
 					<section id="services">
 						<p class="lead center"> Finest Renovations in the state of Delaware
 						<ul>
@@ -84,13 +84,11 @@
 						</ul>
 					</section>
 				</div>
-			</row>
-			
-			<row>
-				<div class="col-lg-12 col-md-4">
-					<h2>Brian Hibbert</h2>			
-					<!--Contact info-->	
+				
+				<!--Contact info-->	
+				<div class="col-lg-3 col-md-4 col-md-pull-9 col-sm-6 col-xs-12 contact">				
 					<div id="contactInfo">
+						<h2>Brian Hibbert</h2>
 						<ul>
 							<li><span class="glyphicon glyphicon-earphone"></span> 973-204-8109</li>
 							<li><span class="glyphicon glyphicon-envelope"></span> contact@domerenovations.com</li>
@@ -98,7 +96,8 @@
 						</ul>
 					</div>
 				</div>
-			</row>	
+
+			</row>
 		</div>
 
 		
@@ -145,16 +144,14 @@
 		    </div>
 		  </div>
 		</div>
-
  
 		<!-- Footer -->
 		<footer>
-			    <div class="col-md-3 col-md-offset-9 col-sm-5 col-sm-offset-8 col-xs-6 col-xs-offset-7 footerInfo">
-			        <p id="copyright">Copyright &copy; Dome Renovations 2015</p>
-			    </div>
+			Copyright &copy; Dome Renovations 2015
 		</footer>
-		
-	</div>
+		</div>
+
+	
 
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -168,7 +165,7 @@
             //auto-advancing slides? accepts boolean (true/false) or object
             auto : { 
                 // speed to advance slides at. accepts number of milliseconds
-                speed : 2500, 
+                speed : 3000, 
                 // pause advancing on mouseover? accepts boolean
                 pauseOnHover : true 
             },
@@ -178,6 +175,11 @@
         };
 		makeBSS('.bss-slides',opts);
 	</script> 
+	
+	<script>
+		var window_height = $(window).height();
+    	$(".contentContainer").css("min-height",window_height);
+	</script>
 	
   </body>
 </html>
