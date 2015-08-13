@@ -1,53 +1,53 @@
 <?php
 
 	if ($_POST["submit"]){
-		
+
 		$result='<div class="alert alert-success"> Form submitted';
-		
+
 		if(!$_POST["name"]){
-			
+
 			$error.="<br />Please enter your name";
 		}
-		
+
 		if(!$_POST["email"]){
-			
+
 			$error.="<br />Please enter your email address";
 		}
 
 
 		if(!$_POST["msg"]){
-			
+
 			$error.="<br />Please enter your message";
 		}
-		
+
 		if ($_POST['email']!="" AND !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 			$error.="<br />Please enter a valid email address";
 		}
-		
+
 		if($error){
 			$result='<div class="alert alert-danger"><strong>There were error(s) in your form:</strong>'.$error.'</div>';
-		
+
 		} else {
 
 			if (mail("ian.hibbert.a@gmail.com", "Comment from website!", "Name: ".
 				$_POST['name']."
-				
+
 				 Email: ".$_POST['email']."
-				
+
 				 Comment: ".$_POST['comment'])) {
-				
+
 				 $result='<div class="alert alert-success"><strong>Thank
 				you!</strong> I\'ll be in touch.</div>';
-		
+
 		 	} else {
-		 
+
 			$result='<div class="alert alert-danger">Sorry, there was
 			an error sending your message. Please try again later.</div>';
-			
+
 			}
 		}
 	}
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,13 +61,10 @@
 
 	<!--MY CSS -->
     <link href="css/style.css" rel="stylesheet">
-    
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-       
-    <!--Lightbox-->
-    <link href="css/lightbox.css" rel="stylesheet">
-    
+
     <!--Slideshow-->
     <link href="css/slideshow.css" rel="stylesheet">
 
@@ -78,44 +75,44 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  
+
   <body>
-   
+
 	<div class="container contentContainer">
 		<!--Brand Name-->
 		<div id="brandName" class="center">
 			<h1>Dome Renovations</h1>
 			<p class="lead" id="tagLine">Meticulous Renovations</p>
 		</div>
-		
+
 		<!--Slidshow-->
-		<div class="bss-slides">  
+		<div class="bss-slides">
 		    <figure>
 		        <img src="images/renovations/before-after-sidewalk.jpg" width="100%" />
-		        <figcaption></figcaption> 
+		        <figcaption></figcaption>
 		    </figure>
-		    
+
 		    <figure>
 		        <img src="images/renovations/before-after-bathroom.jpg" width="100%" />
-		        <figcaption></figcaption> 
+		        <figcaption></figcaption>
 		    </figure>
-		    
+
 			<figure>
 		        <img src="images/renovations/before-after-shower.jpg" width="100%" />
-		        <figcaption></figcaption> 
+		        <figcaption></figcaption>
 		    </figure>
-		    
+
 		    <figure>
 		        <img src="images/renovations/before-after-backdoor.jpg" width="100%" />
-		        <figcaption></figcaption> 
+		        <figcaption></figcaption>
 		    </figure>
 		    <!-- more figures here as needed -->
 		</div>
-		
-		
+
+
 		<!--Info-->
-		<div id="info">				
-			<row>					
+		<div id="info">
+			<row>
 				<!--Services-->
 				<div class="col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2 col-xs-7">
 					<section id="services">
@@ -126,18 +123,18 @@
 							<li class="bottom-border">Basements</li>
 							<li class="bottom-border" >Decks</li>
 						</ul>
-						
+
 						<div class="clear"></div>
-						
+
 						<ul>
 							<li>Security Camera Installions</li>
 							<li>Alarm Installions</li>
 						</ul>
 					</section>
 				</div>
-				
-				<!--Contact info-->	
-				<div class="col-lg-3 col-md-4 col-md-pull-9 col-sm-6 col-xs-12 contact">				
+
+				<!--Contact info-->
+				<div class="col-lg-3 col-md-4 col-md-pull-9 col-sm-6 col-xs-12 contact">
 					<div id="contactInfo">
 						<h2>Brian Hibbert</h2>
 						<ul>
@@ -151,7 +148,7 @@
 			</row>
 		</div>
 
-		
+
 		<div class="clear"></div>
 
 		<!-- Email -->
@@ -163,74 +160,74 @@
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        <h4 class="modal-title">Email Form</h4>
 		      </div>
-		    
+
 		      <div class="modal-body">
 			  <!--Email Form-->
-				
+
 			  	<?php echo $result;?>
 				<form method= "post" role="form">
 					<div class="form-group">
 						<label for="name">Name:</label>
 						<input type="text" class="form-control" name="name" placeholder="Your Name" value="<?php echo $_POST['name'];?>">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="email">Email address:</label>
 						<input type="email" class="form-control" name="email" placeholder="Your email address" value="<?php echo $_POST['email'];?>">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="Comment">Message:</label>
 						<textarea row="5" class="form-control" name="msg" placeholder="Hi my name is blank... Can you help me with this?" value="<?php echo $_POST['msg'];?>">
 						</textarea>
-						
-						
+
+
 						<input name ="submit" class="btn btn-success" id="contact-button" type="submit" value="Contact Me!"/>
 					</div>
 				</form>
-							
+
 				<div class="modal-footer">
-			    </div>	
+			    </div>
 		    </div>
 		    </div>
 		  </div>
 		</div>
- 
+
 		<!-- Footer -->
 		<footer>
 			Copyright &copy; Dome Renovations 2015
 		</footer>
 		</div>
 
-	
+
 
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-  	
+
   	<!-- Slideshow-->
-	<script src="js/slideshow.min.js"></script>  
+	<script src="js/slideshow.min.js"></script>
 	<script>
 		var opts = {
             //auto-advancing slides? accepts boolean (true/false) or object
-            auto : { 
+            auto : {
                 // speed to advance slides at. accepts number of milliseconds
-                speed : 3000, 
+                speed : 3000,
                 // pause advancing on mouseover? accepts boolean
-                pauseOnHover : true 
+                pauseOnHover : true
             },
             // show fullscreen toggle? accepts boolean
-            fullScreen : true, 
+            fullScreen : true,
 
         };
 		makeBSS('.bss-slides',opts);
-	</script> 
-	
+	</script>
+
 	<script>
 		var window_height = $(window).height();
     	$(".contentContainer").css("min-height",window_height);
 	</script>
-	
+
   </body>
 </html>

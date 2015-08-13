@@ -1,5 +1,6 @@
-html,body { 
-	background: url("../images/background.jpg") no-repeat center center fixed; 
+/* General */
+html,body {
+	background: url("../images/background.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -35,6 +36,7 @@ p{
 	margin: 0;
 }
 
+/*Header*/
 #brandName{
 	margin-bottom: 20px;
 }
@@ -51,9 +53,10 @@ p{
 	font-size: large;
 }
 
+/*Contact */
 #info h2{
 	font-weight: 300;
-	font-size: 30px;	
+	font-size: 30px;
 }
 
 .contact{
@@ -61,7 +64,7 @@ p{
 }
 
 #contactInfo ul{
-	padding:0;	
+	padding:0;
 }
 
 #contactInfo ul li{
@@ -80,10 +83,10 @@ p{
 	float: right;
 }
 
-
-#services { 
-	width: 100%; 
-	overflow: hidden; 
+/*Services */
+#services {
+	width: 100%;
+	overflow: hidden;
 	margin-top:10px;
 }
 
@@ -102,7 +105,7 @@ p{
 	left:40%;
 }
 
-#services ul li { 
+#services ul li {
 	position:relative;
 	right:45%;
 	list-style-position: inside;
@@ -110,10 +113,10 @@ p{
 	padding-right:15px;
 }
 
+/*Footer*/
 footer {
   width: 100%;
   position: absolute;
   bottom:0;
   text-align:right;
 }
-
