@@ -67,6 +67,9 @@
 
     <!--Slideshow-->
     <link href="css/slideshow.css" rel="stylesheet">
+    
+    <!--Background-->
+    <STYLE TYPE="text/css"> BODY {background-image: url("images/background.jpg"); } </STYLE>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -127,8 +130,8 @@
 						<div class="clear"></div>
 
 						<ul>
-							<li>Security Camera Installions</li>
-							<li>Alarm Installions</li>
+							<li>Security Camera Installations</li>
+							<li>Alarm Installations</li>
 						</ul>
 					</section>
 				</div>
