@@ -1,8 +1,8 @@
 .bss-slides{
   position: relative;
-  display: block;   
+  display: block;
   margin:0 auto;
-  width: 57%;
+  width: 90%;
 }
 .bss-slides:focus{
  outline: 0;
@@ -10,7 +10,7 @@
 .bss-slides figure{
   position: absolute;
   top: 0;
-  
+
 }
 .bss-slides figure:first-child{
   position: relative;
@@ -32,7 +32,7 @@
   opacity: 1;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  position: relative; 
+  position: relative;
   overflow: hidden;
 }
 
@@ -56,7 +56,7 @@
   opacity: 1;
 }
 .bss-slides figcaption a{
-  color: #fff;    
+  color: #fff;
 }
 .bss-next, .bss-prev{
   color: #fff;
@@ -92,18 +92,18 @@
 .bss-fullscreen{
   display: block;
   width: 20px;
-  height: 20px;    
-  background: rgba(0,0,0,.4) url(../img/arrows-alt_ffffff_64.png); 
-  -webkit-background-size: contain; 
+  height: 20px;
+  background: rgba(0,0,0,.4) url(../img/arrows-alt_ffffff_64.png);
+  -webkit-background-size: contain;
   background-size: contain;
   position: absolute;
   top: 5px;
-  left: 5px;   
-  cursor: pointer;    
+  left: 5px;
+  cursor: pointer;
   opacity: .3;
-} 
+}
 .bss-fullscreen:hover{
-  opacity: .8;   
+  opacity: .8;
 }
 :-webkit-full-screen .bss-fullscreen{
     background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);

@@ -1,54 +1,4 @@
-<?php
-
-	if ($_POST["submit"]){
-
-		$result='<div class="alert alert-success"> Form submitted';
-
-		if(!$_POST["name"]){
-
-			$error.="<br />Please enter your name";
-		}
-
-		if(!$_POST["email"]){
-
-			$error.="<br />Please enter your email address";
-		}
-
-
-		if(!$_POST["msg"]){
-
-			$error.="<br />Please enter your message";
-		}
-
-		if ($_POST['email']!="" AND !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-			$error.="<br />Please enter a valid email address";
-		}
-
-		if($error){
-			$result='<div class="alert alert-danger"><strong>There were error(s) in your form:</strong>'.$error.'</div>';
-
-		} else {
-
-			if (mail("ian.hibbert.a@gmail.com", "Comment from website!", "Name: ".
-				$_POST['name']."
-
-				 Email: ".$_POST['email']."
-
-				 Comment: ".$_POST['comment'])) {
-
-				 $result='<div class="alert alert-success"><strong>Thank
-				you!</strong> I\'ll be in touch.</div>';
-
-		 	} else {
-
-			$result='<div class="alert alert-danger">Sorry, there was
-			an error sending your message. Please try again later.</div>';
-
-			}
-		}
-	}
-
-?>
+<?include("email.php");?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +8,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Dome Renovations</title>
 
-
 	<!--MY CSS -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -67,7 +16,7 @@
 
     <!--Slideshow-->
     <link href="css/slideshow.css" rel="stylesheet">
-    
+
     <!--Background-->
     <STYLE TYPE="text/css"> BODY {background-image: url("images/background.jpg"); } </STYLE>
 
@@ -89,66 +38,70 @@
 		</div>
 
 		<!--Slidshow-->
-		<div class="bss-slides">
-		    <figure>
-		        <img src="images/renovations/before-after-sidewalk.jpg" width="100%" />
-		        <figcaption></figcaption>
-		    </figure>
+    <div class="picture-container col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+  		<div class="bss-slides">
+  		    <figure>
+  		        <img src="images/renovations/before-after-sidewalk.jpg" width="100%" />
+  		        <figcaption></figcaption>
+  		    </figure>
 
-		    <figure>
-		        <img src="images/renovations/before-after-bathroom.jpg" width="100%" />
-		        <figcaption></figcaption>
-		    </figure>
+  		    <figure>
+  		        <img src="images/renovations/before-after-bathroom.jpg" width="100%" />
+  		        <figcaption></figcaption>
+  		    </figure>
 
-			<figure>
-		        <img src="images/renovations/before-after-shower.jpg" width="100%" />
-		        <figcaption></figcaption>
-		    </figure>
+  			<figure>
+  		        <img src="images/renovations/before-after-shower.jpg" width="100%" />
+  		        <figcaption></figcaption>
+  		    </figure>
 
-		    <figure>
-		        <img src="images/renovations/before-after-backdoor.jpg" width="100%" />
-		        <figcaption></figcaption>
-		    </figure>
-		    <!-- more figures here as needed -->
-		</div>
-
+  		    <figure>
+  		        <img src="images/renovations/before-after-backdoor.jpg" width="100%" />
+  		        <figcaption></figcaption>
+  		    </figure>
+  		    <!-- more figures here as needed -->
+  		</div>
+    </div>
 
 		<!--Info-->
 		<div id="info">
-			<row>
+			<div class="row">
 				<!--Services-->
-				<div class="col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2 col-xs-7">
-					<section id="services">
+				<div class="col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+					<section id="services" class="center">
 						<p class="lead center"> Finest Renovations in the state of Delaware
 						<ul>
-							<li class="bottom-border">Bathrooms</li>
-							<li class="bottom-border">Kitchens</li>
-							<li class="bottom-border">Basements</li>
-							<li class="bottom-border" >Decks</li>
+							<li>Bathrooms</li>
+							<li>Kitchens</li>
+							<li>Basements</li>
+							<li>Decks</li>
 						</ul>
 
+
 						<div class="clear"></div>
+            <hr class="line">
 
 						<ul>
-							<li>Security Camera Installations</li>
+							<li>Camera Installations</li>
 							<li>Alarm Installations</li>
 						</ul>
 					</section>
 				</div>
+      </div>
 
 				<!--Contact info-->
-				<div class="col-lg-3 col-md-4 col-md-pull-9 col-sm-6 col-xs-12 contact">
-					<div id="contactInfo">
-						<h2>Brian Hibbert</h2>
-						<ul>
-							<li><span class="glyphicon glyphicon-earphone"></span> 973-204-8109</li>
-							<li><span class="glyphicon glyphicon-envelope"></span> contact@domerenovations.com</li>
-							<button type="button" id="message-button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#emailForm">Message Me!</button>
-						</ul>
-					</div>
-				</div>
-
-			</row>
+        <div class="row">
+  				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-10 contact">
+  					<div id="contactInfo">
+  						<h2>Brian Hibbert</h2>
+  						<ul>
+  							<li><span class="glyphicon glyphicon-earphone"></span> 973-204-8109</li>
+  							<li><span class="glyphicon glyphicon-envelope"></span> contact@domerenovations.com</li>
+  							<button type="button" id="message-button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#emailForm">Message Me!</button>
+  						</ul>
+  					</div>
+  				</div>
+			  </div>
 		</div>
 
 
@@ -197,10 +150,13 @@
 		</div>
 
 		<!-- Footer -->
-		<footer>
-			Copyright &copy; Dome Renovations 2015
-		</footer>
-		</div>
+    <div class="row"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12"></div>
+  		<footer>
+  			Copyright &copy; Dome Renovations 2015
+  		</footer>
+    </div>
+	</div>
 
 
 

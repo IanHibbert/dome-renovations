@@ -18,8 +18,8 @@ p{
 	position:relative;
 }
 
-.contentContainer{
-	height: 100%;
+.picture-container{
+	margin:0 auto;
 }
 
 .clear{clear:both;}
@@ -58,10 +58,6 @@ p{
 	font-size: 30px;
 }
 
-.contact{
-	top:50px;
-}
-
 #contactInfo ul{
 	padding:0;
 }
@@ -94,28 +90,31 @@ p{
 }
 
 #services p{
-	margin: 5px 0;
+	margin-bottom: 10px;
+	font-size:1.3em;
+	font-weight:350;
 }
 
 #services ul{
 	list-style:none;
-	position:relative;
-	float:left;
-	left:40%;
+	margin:0;
+	padding:0;
 }
 
 #services ul li {
-	position:relative;
-	right:45%;
-	list-style-position: inside;
-	float:left;
-	padding-right:15px;
+  display:inline-block;
+  *display:inline; /*IE7*/
+  *zoom:1; /*IE7*/
+  margin-right:10px;
+}
+
+.line{
+	margin:0 0 5px 0;
+	padding:0;
 }
 
 /*Footer*/
 footer {
   width: 100%;
-  position: absolute;
-  bottom:0;
   text-align:right;
 }
